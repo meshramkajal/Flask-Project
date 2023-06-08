@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <form action="/chat" method="POST">
+        <label for="condition">Condition:</label>
+        <select id="condition" name="condition">
+            <option value="Headache">Headache</option>
+            <option value="Fever">Fever</option>
+            <option value="Cough">Cough</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br><br>
+        <label for="severity">Severity:</label>
+        <select id="severity" name="severity">
+            <option value="Mild">Mild</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Severe">Severe</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br><br>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" required>
+        <br><br>
+        <input type="submit" value="Send">
+    </form>
+    {% if reply %}
+    <h2>Reply:</h2>
+    <p>{{ reply }}</p>
+    {% endif %}
+</body>
+</html>
